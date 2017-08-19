@@ -1,0 +1,14 @@
+# Intellij project files
+*.iml
+.idea/
+*.ipr
+
+# Gradle
+.gradle/
+build/
+bin/
+.gradle
+!gradle/wrapper/gradle-wrapper.jar
+
+# General
+.DS_Store
