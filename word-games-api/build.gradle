@@ -19,7 +19,7 @@ apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 
 jar {
-    baseName = 'poorjar-charades-api'
+    baseName = 'word-games-api'
     version = '0.1.0-SNAPSHOT'
 }
 
