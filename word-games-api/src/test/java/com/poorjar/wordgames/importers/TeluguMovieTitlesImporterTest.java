@@ -11,7 +11,10 @@ public class TeluguMovieTitlesImporterTest {
 
     @Test
     public void testMovieNameImport() throws Exception {
-        for(WikiMovieData movie : TeluguMovieTitlesImporter.getWikiMovieDataForYear(2014)) {
+        for(WikiMovieData movie : TeluguMovieTitlesImporter.getWikiMovieDataForYear(2017)) {
+            LOGGER.debug(movie.toString());
+        }
+        for(WikiMovieData movie : TeluguMovieTitlesImporter.getWikiMovieDataForYear(1940)) {
             LOGGER.debug(movie.toString());
         }
     }

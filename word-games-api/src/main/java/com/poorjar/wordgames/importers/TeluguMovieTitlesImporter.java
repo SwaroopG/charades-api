@@ -33,16 +33,16 @@ public class TeluguMovieTitlesImporter {
             Elements wikiTable = wikiPage.select("table.wikitable");
             LOGGER.debug("Movie name tables found on wiki page [" + wikiTable.size() + "].");
 
-            boolean ignoreFirstTable = wikiTable.size() > 2; // Box Office Collections Table
+            boolean ignoreFirstTableRequired = wikiTable.size() > 2; // Box Office Collections Table
             boolean firstElementIgnored = false;
 
             // There can be multiple tables on the page. So going through all tables(elements).
             for (Element element : wikiTable) {
-                if (ignoreFirstTable && firstElementIgnored) {
-                    traveseElements(element, movieNames, year);
-                }
-                if (ignoreFirstTable && !firstElementIgnored) {
+                if (ignoreFirstTableRequired && !firstElementIgnored) {
                     firstElementIgnored = true;
+                }
+                else{
+                    traveseElements(element, movieNames, year);
                 }
             }
 

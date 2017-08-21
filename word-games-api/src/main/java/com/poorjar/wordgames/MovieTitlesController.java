@@ -70,7 +70,7 @@ public class MovieTitlesController extends ResponseEntityExceptionHandler {
     public List<MovieTitle> importTeluguMovieTitleFromWiki(@RequestParam("year") int year) throws Exception {
         LOGGER.debug("Importing telugu movie titles from wiki...");
         List<MovieTitle> movieTitlesByYear = Lists.newArrayList(this.movieRepository.findByYear(year));
-        if (movieTitlesByYear.isEmpty()) {
+        if (!movieTitlesByYear.isEmpty()) {
             throw new WordGameException("Data already exist for year [" + year + "].");
         }
         return this.movieRepository.save(getMovieDataFromWiki(year));
