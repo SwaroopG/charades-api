@@ -1,4 +1,4 @@
-export class charadeinfo {
+export class CharadeInfo {
   id: number;
   title: String;
   dubtitle: String;

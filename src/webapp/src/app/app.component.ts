@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {charadeinfo} from "./charadeinfo";
+import {CharadeInfo} from "./CharadeInfo";
 
 @Component({
   selector: 'app-root',
@@ -8,5 +8,5 @@ import {charadeinfo} from "./charadeinfo";
 })
 export class AppComponent {
   title = 'Charades - Telugu Movie Names!';
-  selectedCharade: charadeinfo = {id: 1, title: 'Test Title', dubtitle: 'Dub Title', director: 'Swaroop', cast: 'Raj', year: 2001};
+  selectedCharade: CharadeInfo = {id: 1, title: 'Test Title', dubtitle: 'Dub Title', director: 'Swaroop', cast: 'Raj', year: 2001};
 }

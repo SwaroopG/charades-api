@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CharadeinfoComponent } from './charadeinfo.component';
+import { CharadeInfoComponent } from './charade-info.component';
 
-describe('CharadeinfoComponent', () => {
-  let component: CharadeinfoComponent;
-  let fixture: ComponentFixture<CharadeinfoComponent>;
+describe('CharadeInfoComponent', () => {
+  let component: CharadeInfoComponent;
+  let fixture: ComponentFixture<CharadeInfoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CharadeinfoComponent ]
+      declarations: [ CharadeInfoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CharadeinfoComponent);
+    fixture = TestBed.createComponent(CharadeInfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
