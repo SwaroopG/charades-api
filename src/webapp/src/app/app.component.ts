@@ -1,12 +1,25 @@
 import {Component} from "@angular/core";
-import {CharadeInfo} from "./CharadeInfo";
+import {CharadeInfo} from "./charadeinfo";
+import {CharadeService} from "./charade.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [CharadeService]
 })
 export class AppComponent {
-  title = 'Charades - Telugu Movie Names!';
-  selectedCharade: CharadeInfo = {id: 1, title: 'Test Title', dubtitle: 'Dub Title', director: 'Swaroop', cast: 'Raj', year: 2001};
+  title = 'Charades';
+  selectedCharade: CharadeInfo;
+
+  constructor(private charadeService: CharadeService) {
+  }
+
+  ngOnInit() {
+    this.charadeService.getCharade().then(charade => this.selectedCharade = charade);
+  }
+
+  reloadPage() {
+    window.location.reload();
+  }
 }

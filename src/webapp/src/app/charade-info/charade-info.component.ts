@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { CharadeInfo } from '../CharadeInfo';
+import {Component, Input, OnInit} from "@angular/core";
+import {CharadeInfo} from "../charadeinfo";
 
 @Component({
   selector: 'app-charade-info',
@@ -9,7 +9,8 @@ import { CharadeInfo } from '../CharadeInfo';
 export class CharadeInfoComponent implements OnInit {
   @Input() charadeInfo: CharadeInfo;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
