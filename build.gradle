@@ -52,7 +52,7 @@ dependencies {
 task buildDocker(type: Docker, dependsOn: build) {
     push = false
     applicationName = jar.baseName
-    dockerfile = file('docker/services/Dockerfile')
+    dockerfile = file('docker/Dockerfile')
     doFirst {
         copy {
             from jar
