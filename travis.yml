@@ -1,0 +1,27 @@
+dist: trusty
+sudo: required
+services:
+  - postgresql
+addons:
+    postgresql: "9.6"
+language:
+    java
+jdk:
+    - oraclejdk8
+env:
+  matrix:
+    - TERM=dumb
+  global:
+    - COMMIT=${TRAVIS_COMMIT::8}
+    - SERVICESREPO=swarooprajg/charades
+script:
+  - gradle clean build
+after_success:
+  - gradle cobertura coveralls
+  - echo $COMMIT
+  - docker images
+  - gradle buildDocker
+  - docker login -e="swarooprajg@gmail.com" -u="swarooprajg" -p="TourPark"
+  - docker tag charades:latest $SERVICESREPO:latest
+  - docker images
+  - docker push $SERVICESREPO

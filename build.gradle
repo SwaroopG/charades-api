@@ -17,10 +17,11 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'docker'
 
 jar {
-    baseName = 'word-games-api'
-    version = '0.1.0-SNAPSHOT'
+    baseName = 'charades-api'
+    version = '0.1.0'
 }
 
 repositories {
@@ -46,4 +47,16 @@ dependencies {
 
     testCompile 'org.springframework.boot:spring-boot-starter-test'
     testCompile 'org.springframework.restdocs:spring-restdocs-mockmvc'
+}
+
+task buildDocker(type: Docker, dependsOn: build) {
+    push = false
+    applicationName = jar.baseName
+    dockerfile = file('docker/services/Dockerfile')
+    doFirst {
+        copy {
+            from jar
+            into stageDir
+        }
+    }
 }
